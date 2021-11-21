@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Events</title>
+</head>
+<body>
+<h1>Events</h1>
+
+<table>
+
+    <tbody>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+    <tr th:each="event : ${events}">
+        <td><span th:text="${event.getId()}"> Id </span></td>
+        <td><a th:href="@{/events/{id}(id=${event.getId()})}" th:text="${event.getTitle()}" > Title </a></td>
+        <td><span th:text="${event.getDate()}"> Date </span></td>
+        <td>
+            <form th:method="GET" th:action="@{/events/{id}/edit(id=${event.getId()})}">
+                <input type="submit" value="Edit"/>
+            </form>
+        </td>
+        <td>
+            <form th:method="DELETE" th:action="@{/events/{id}/delete(id=${event.getId()})}">
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+
+</table>
+
+<a href="/events/new">Create new event</a>
+</body>
+</html>

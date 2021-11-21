@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tickets>
+	<ticket userId="1" eventId="1" category="STANDARD" place="1"/>
+	<ticket userId="1" eventId="2" category="STANDARD" place="1"/>
+	<ticket userId="1" eventId="3" category="PREMIUM" place="1"/>
+	<ticket userId="1" eventId="4" category="BAR" place="1"/>
+
+	<ticket userId="2" eventId="1" category="STANDARD" place="2"/>
+	<ticket userId="2" eventId="2" category="STANDARD" place="2"/>
+	<ticket userId="2" eventId="3" category="PREMIUM" place="2"/>
+	<ticket userId="2" eventId="4" category="BAR" place="2"/>
+
+	<ticket userId="3" eventId="1" category="STANDARD" place="3"/>
+	<ticket userId="3" eventId="2" category="STANDARD" place="3"/>
+	<ticket userId="3" eventId="3" category="PREMIUM" place="3"/>
+	<ticket userId="3" eventId="4" category="BAR" place="3"/>
+
+	<ticket userId="4" eventId="1" category="STANDARD" place="4"/>
+	<ticket userId="4" eventId="2" category="STANDARD" place="4"/>
+	<ticket userId="4" eventId="3" category="PREMIUM" place="4"/>
+	<ticket userId="4" eventId="4" category="BAR" place="4"/>
+</tickets>

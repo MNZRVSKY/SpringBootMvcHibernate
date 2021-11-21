@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${'User ' + event.getTitle()}"></title>
+</head>
+<body>
+<table>
+    <tbody>
+        <tr>
+            <td><p th:text="${event.getTitle()}">VALUE</p></td>
+            <td><p th:text="${event.getDate()}">VALUE</p></td>
+        </tr>
+
+        <tr>
+            <td>
+                <form th:method="GET" th:action="@{/events/{id}/edit(id=${event.getId()})}">
+                    <input type="submit" value="Edit"/>
+                </form>
+            </td>
+            <td>
+                <form th:method="DELETE" th:action="@{/event/{id}/delete(id=${event.getId()})}">
+                    <input type="submit" value="Delete"/>
+                </form>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

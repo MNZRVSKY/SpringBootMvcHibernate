@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/tickets}" th:object="${ticket}">
+
+    <table>
+
+        <tbody>
+        <tr>
+            <td><label for="eventId">Enter event id: </label></td>
+            <td><input type="text" th:field="*{eventId}" id="ticket.getEventId()"/></td>
+        </tr>
+
+        <tr>
+            <td><label for="userId">Enter user id: </label></td>
+            <td><input type="text" th:field="*{userId}" id="ticket.getUserId()"/></td>
+        </tr>
+        <tr>
+            <td><label for="category">Enter category: </label></td>
+            <td><input type="text" th:field="*{category}" id="ticket.getCategory()"/></td>
+        </tr>
+        <tr>
+            <td><label for="place">Enter place: </label></td>
+            <td><input type="text" th:field="*{place}" id="ticket.getPlace()"/></td>
+        </tr>
+
+        </tbody>
+
+    </table>
+
+    <input type="submit" value="Create!"/>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+<body>
+<h3>Error View</h3>
+
+<p>Exception: <b th:text="${exception['class'].name}"></b></p>
+<p>Message: <b th:text="${exception.message}"></b></p>
+<p>Response status: <b th:text="${statusValue} + ' ' + ${statusStr}"></b></p>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${'User ' + event.getTitle()}"></title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/events/{id}/update(id=${event.getId()})}" th:object="${event}">
+
+    <label for="id">Enter id: </label>
+    <input type="text" th:field="*{id}" id="id"/>
+    <br/>
+
+    <label for="title">Enter title: </label>
+    <input type="text" th:field="*{title}" id="title"/>
+    <br/>
+
+    <label for="date">Enter email: </label>
+    <input type="text" th:field="*{date}" id="date"/>
+    <br/>
+
+    <input type="submit" value="Update!"/>
+</form>
+</body>
+</html>

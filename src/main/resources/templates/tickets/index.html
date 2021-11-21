@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tickets</title>
+</head>
+<body>
+<h1 >Tickets</h1>
+
+<table>
+
+    <tbody>
+    <tr>
+        <th>Id</th>
+        <th>Event Id</th>
+        <th>User Id</th>
+        <th>Place</th>
+        <th>Category</th>
+        <th>Delete</th>
+    </tr>
+
+    <tr th:each="ticket : ${tickets}">
+        <td><span th:text="${ticket.getId()}"> Id </span></td>
+        <td><a th:href="@{/tickets/forevent/{eventId}/{pageSize}/{pageNum}(eventId=${ticket.getEvent().getId()}, pageSize=${4}, pageNum=${0})}" th:text="${ticket.getEvent().getId()}" > Event Id </a></td>
+        <td><a th:href="@{/tickets/foruser/{userId}/{pageSize}/{pageNum}(userId=${ticket.getUser().getId()}, pageSize=${4}, pageNum=${0})}" th:text="${ticket.getUser().getId()}" > User Id </a></td>
+        <td><span th:text="${ticket.getPlace()}"> Place </span></td>
+        <td><span th:text="${ticket.getCategory()}"> Category </span></td>
+        <td>
+            <form th:method="DELETE" th:action="@{/tickets/{id}/delete(id=${ticket.getId()})}">
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+
+</table>
+<br/>
+<br/>
+<a href="/tickets/new">Book new ticket</a>
+<br/>
+<br/>
+<a href="/tickets/export/pdf">Export to PDF</a>
+</body>
+</html>
